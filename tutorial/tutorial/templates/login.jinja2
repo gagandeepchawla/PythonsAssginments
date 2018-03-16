@@ -1,0 +1,62 @@
+{% extends 'login_signup_layout.jinja2' %}
+{% block content %}
+<div class="inner-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 text">
+                <h1><strong>Login Form</strong></h1>
+                <div class="description">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 form-box">
+            	<div class="form-top">
+            		<div class="form-top-left">
+            			<h3>Login to our site</h3>
+                		<p>Enter your username and password to log on:</p>
+            		</div>
+            		<div class="form-top-right">
+            			<i class="fa fa-key"></i>
+            		</div>
+                </div>
+                {% if msg %}
+                <div class="form-top">
+                    <div class="form-top-left">
+                        <h3>{{ msg }}</h3>
+                    </div>
+                    <div class="form-top-right">
+                        <i class="fa fa-key"></i>
+                    </div>
+                </div>
+                {% endif %}
+                <div class="form-bottom">
+                    <form role="form" action="/checkuser" method="post" class="login-form">
+                    	<div class="form-group">
+                    		<label class="sr-only" for="form-username">Username</label>
+                        	<input type="text" name="form-username" placeholder="Username..." class="form-username form-control"  required="required">
+                        </div>
+                        <div class="form-group">
+                        	<label class="sr-only" for="form-password">Password</label>
+                        	<input type="password" name="form-password" placeholder="Password..." class="form-password form-control" required="required">
+                        </div>
+                        <button type="submit" class="btn">Sign in!</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 social-login">
+                <h3>...or Create New Account</h3>
+                <div class="social-login-buttons">
+                    <a class="btn btn-link-1 btn-link-1-google-plus" href= "/addnewuser">
+                        <i class="fa fa-google-plus"></i> Sign Up
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
